@@ -23,7 +23,7 @@ public class PauseController : MonoBehaviour
         {
             if (isPaused)
             {
-                /////nothing
+                continueGame();
             }
             else 
             {

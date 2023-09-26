@@ -16,6 +16,16 @@ public class takeItem : MonoBehaviour
 
     private void Update()
     {
+        GameObject pause = GameObject.FindGameObjectWithTag("Player");
+
+        if (pause.GetComponent<PauseController>().isPaused == false)
+        {
+            Take();
+        }
+    }
+
+    public void Take()
+    {
         if (Input.GetKeyDown(KeyCode.E) && isOn)
         {
             print("Done");
