@@ -19,7 +19,9 @@ public class PauseController : MonoBehaviour
     //Check for ESCAPE key
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        GameObject keyPad = GameObject.FindGameObjectWithTag("Player");
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !keyPad.GetComponent<ShowKeyPad>().keyPadIsOn)
         {
             if (isPaused)
             {
