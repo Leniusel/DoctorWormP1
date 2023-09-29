@@ -9,10 +9,16 @@ public class keypad : MonoBehaviour
     public string realCode = "2930";
     public TMP_Text txtCode;
 
+    public GameObject key;
+    public GameObject keyPad;
+    public bool isDone;
+
     void Start()
     {
+        isDone = false;
         code = "";
         txtCode.text = code;
+        key.SetActive(false);
     }
 
     private void Update()
@@ -112,11 +118,16 @@ public class keypad : MonoBehaviour
     {
         if(code == realCode)
         {
-            print("Did it");
+            key.SetActive(true);
+            isDone = true;
+            keyPad.GetComponent<Collider2D>().enabled = false;
+            GameObject Done = GameObject.FindGameObjectWithTag("Player");
+            Done.GetComponent<ShowKeyPad>().isDone();
         }
         else
         {
             code = "";
+            isDone = false;
         }
     }
 }

@@ -21,31 +21,43 @@ public class ShowKeyPad : MonoBehaviour
     {
         GameObject paused = GameObject.FindGameObjectWithTag("Player");
 
-        if (Input.GetKeyDown(KeyCode.E) && isOn && !keyPadIsOn && !paused.GetComponent<PauseController>().isPaused)
+        if (Input.GetKeyDown(KeyCode.E) && isOn && !keyPadIsOn &&
+            !paused.GetComponent<PauseController>().isPaused)
         {
             keyPadIsOn = true;
             txtItem.text = "Press E to exit!";
             keyPad.SetActive(true);
-            Time.timeScale = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOn && keyPadIsOn)
         {
             keyPadIsOn = false;
             txtItem.text = "Press E to use!";
             keyPad.SetActive(false);
-            Time.timeScale = 1f;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isOn = true;
-        txtItem.text = "Press E to use!";
+
+        GameObject keyPad = GameObject.FindGameObjectWithTag("Player");
+        if (!keyPad.GetComponent<keypad>().isDone)
+        {
+            isOn = true;
+            txtItem.text = "Press E to use!";
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         isOn = false;
         txtItem.text = "";
+    }
+
+    public void isDone()
+    {
+        keyPadIsOn = false;
+        txtItem.text = "";
+        keyPad.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

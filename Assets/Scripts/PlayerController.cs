@@ -15,6 +15,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject keyPad = GameObject.FindGameObjectWithTag("Player");
+
+        if (!keyPad.GetComponent<ShowKeyPad>().keyPadIsOn)
+        {
+            Move();
+        }
+    }
+
+    public void Move()
+    {
         // Get input from the player
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
