@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class PauseController : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public bool isPaused = false;
+    public bool isPaused;
 
     //For every scene, pause menu is disabled until toggled with ESCAPE key
     void Start()
     {
+        isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -19,7 +20,9 @@ public class PauseController : MonoBehaviour
     //Check for ESCAPE key
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        GameObject keyPad = GameObject.FindGameObjectWithTag("Player");
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !keyPad.GetComponent<ShowKeyPad>().keyPadIsOn)
         {
             if (isPaused)
             {
@@ -51,9 +54,7 @@ public class PauseController : MonoBehaviour
     //Quit Game and return to Main Menu
     public void quitGame()
     {
-        pauseMenu.SetActive(false);
-        isPaused = false;
-        SceneManager.LoadScene("MenuScene");  
+        Application.Quit();
     }
 
     //Restart Game from the very beginning.
