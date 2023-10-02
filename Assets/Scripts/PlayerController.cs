@@ -5,16 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         Rigidbody2D r2d = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        player.transform.rotation = Quaternion.Euler(0, 0, 0);
         GameObject keyPad = GameObject.FindGameObjectWithTag("keyPad");
         GameObject slidePuzzle = GameObject.FindGameObjectWithTag("slidePuzzle");
 
