@@ -15,9 +15,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject keyPad = GameObject.FindGameObjectWithTag("Player");
+        GameObject keyPad = GameObject.FindGameObjectWithTag("keyPad");
+        GameObject slidePuzzle = GameObject.FindGameObjectWithTag("slidePuzzle");
 
-        if (!keyPad.GetComponent<ShowKeyPad>().keyPadIsOn)
+        if (!keyPad.GetComponent<ShowKeyPad>().keyPadIsOn ||
+            !slidePuzzle.GetComponent<ShowSlidePuzzle>().slidePuzzleIsOn)
         {
             Move();
         }
