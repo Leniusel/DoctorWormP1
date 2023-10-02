@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15909,7 +15909,7 @@ GameObject:
   - component: {fileID: 411234391}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: keyPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15929,6 +15929,7 @@ MonoBehaviour:
   keyPad: {fileID: 1443352524}
   txtItem: {fileID: 513837013}
   keyPadIsOn: 0
+  player: {fileID: 1718173744}
 --- !u!212 &411234389
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16119,6 +16120,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5304660926201093812, guid: bfd6b4a063e3746a2b7abd0edc2ca83b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37009,7 +37015,7 @@ GameObject:
   - component: {fileID: 1137508537}
   m_Layer: 0
   m_Name: PictureInteractive
-  m_TagString: Untagged
+  m_TagString: slidePuzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37140,9 +37146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slidePuzzle: {fileID: 1451634743}
-  player: {fileID: 1718173744}
   txtItem: {fileID: 513837013}
   slidePuzzleIsOn: 0
+  player: {fileID: 1718173744}
 --- !u!1 &1140267773
 GameObject:
   m_ObjectHideFlags: 0
@@ -37775,6 +37781,7 @@ RectTransform:
   - {fileID: 4921609646541313052}
   - {fileID: 130080045}
   - {fileID: 1443352525}
+  - {fileID: 1451634744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -38396,12 +38403,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451634743}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12, y: 4.99, z: -5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -414.38, y: -248.76, z: -5}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1345204828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456430674
 GameObject:
@@ -38792,9 +38799,7 @@ GameObject:
   - component: {fileID: 1718173751}
   - component: {fileID: 1718173746}
   - component: {fileID: 1718173745}
-  - component: {fileID: 1718173752}
   - component: {fileID: 1718173750}
-  - component: {fileID: 1718173753}
   - component: {fileID: 1718173754}
   m_Layer: 0
   m_Name: Player
@@ -38951,37 +38956,6 @@ MonoBehaviour:
   key: {fileID: 899452037}
   keyPad: {fileID: 411234387}
   isDone: 0
---- !u!114 &1718173752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718173744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0bc3705dda74fac97cf13d6971245d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyPad: {fileID: 1443352524}
-  txtItem: {fileID: 513837013}
-  keyPadIsOn: 1
---- !u!114 &1718173753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718173744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c32f20d461f694c9239ca5aad80204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slidePuzzle: {fileID: 1451634743}
-  player: {fileID: 1718173744}
-  txtItem: {fileID: 513837013}
-  slidePuzzleIsOn: 1
 --- !u!114 &1718173754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45082,5 +45056,4 @@ SceneRoots:
   - {fileID: 425041369}
   - {fileID: 2081853051}
   - {fileID: 411234390}
-  - {fileID: 1451634744}
   - {fileID: 1137508534}

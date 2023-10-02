@@ -9,6 +9,7 @@ public class ShowKeyPad : MonoBehaviour
     public TMP_Text txtItem;
     private bool isOn;
     public bool keyPadIsOn;
+    public GameObject player;
 
     void Start()
     {
@@ -27,12 +28,16 @@ public class ShowKeyPad : MonoBehaviour
             keyPadIsOn = true;
             txtItem.text = "Press E to exit!";
             keyPad.SetActive(true);
+            player.GetComponent<PlayerController>().enabled = true;
+            player.GetComponent<Collider2D>().enabled = true;
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOn && keyPadIsOn)
         {
             keyPadIsOn = false;
             txtItem.text = "Press E to use!";
             keyPad.SetActive(false);
+            player.GetComponent<PlayerController>().enabled = true;
+            player.GetComponent<Collider2D>().enabled = true;
         }
     }
 
