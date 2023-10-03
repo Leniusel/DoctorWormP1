@@ -78,7 +78,7 @@ public class SlidePuzzelController : MonoBehaviour
     void Update()
     {
        //Give Key here
-        if (Solved())
+        if (Solved() && puzzelObject.active == true)
         {
             key2.SetActive(true);
             //slidePuzzle.SetActive(false);
@@ -88,7 +88,6 @@ public class SlidePuzzelController : MonoBehaviour
             GameObject Done = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<PlayerController>().enabled = true;
             player.GetComponent<Collider2D>().enabled = true;
-            Done.GetComponent<ShowSlidePuzzle>().isDone();
         }
 
         //On player interaction

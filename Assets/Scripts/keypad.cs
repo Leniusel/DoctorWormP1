@@ -121,7 +121,7 @@ public class keypad : MonoBehaviour
             key.SetActive(true);
             isDone = true;
             keyPad.GetComponent<Collider2D>().enabled = false;
-            GameObject Done = GameObject.FindGameObjectWithTag("Player");
+            GameObject Done = GameObject.FindGameObjectWithTag("keyPad");
             Done.GetComponent<ShowKeyPad>().isDone();
         }
         else

@@ -29,7 +29,7 @@ public class takeItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && isOn)
         {
             print("Done");
-            gameObject.SetActive(false);
+            Destroy(this.gameObject);
 
             GameObject inventory = GameObject.FindGameObjectWithTag("Player");
             inventory.GetComponent<InventorySystem>().gotItem();

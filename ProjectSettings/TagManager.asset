@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - slidePuzzle
+  - keyPad
   layers:
   - Default
   - TransparentFX
