@@ -11,7 +11,7 @@ public class SlidePuzzelController : MonoBehaviour
     private List<Transform> pieces;
 
     private int emptyLocation;
-    private int size;
+    public int size;
     
 
     public GameObject key2;
@@ -68,7 +68,7 @@ public class SlidePuzzelController : MonoBehaviour
         key2.SetActive(false);
 
         //Puzzle size set to 3 x 3
-        size = 3;
+        //size = 3;
         pieces = new List<Transform>();
         SetSlidePuzzle(0.01f);
         Shuffle();
