@@ -27,7 +27,6 @@ public class ShowSlidePuzzle : MonoBehaviour
         {
             slidePuzzleIsOn = true;
             player.GetComponent<PlayerController>().enabled = false;
-            player.GetComponent<Collider2D>().enabled = false;
             txtItem.text = "Press E to exit!";
             slidePuzzle.SetActive(true);
         }
@@ -35,7 +34,6 @@ public class ShowSlidePuzzle : MonoBehaviour
         {
             slidePuzzleIsOn = false;
             player.GetComponent<PlayerController>().enabled = true;
-            player.GetComponent<Collider2D>().enabled = true;
             txtItem.text = "Press E to use!";
             slidePuzzle.SetActive(false);
         }

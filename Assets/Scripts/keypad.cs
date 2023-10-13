@@ -6,7 +6,7 @@ using TMPro;
 public class keypad : MonoBehaviour
 {
     public string code;
-    public string realCode = "2930";
+    public string realCode = "4183";
     public TMP_Text txtCode;
 
     public GameObject key;

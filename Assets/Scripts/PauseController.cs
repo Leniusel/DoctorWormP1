@@ -22,10 +22,12 @@ public class PauseController : MonoBehaviour
     {
         GameObject keyPad = GameObject.FindGameObjectWithTag("keyPad");
         GameObject slidePuzzle = GameObject.FindGameObjectWithTag("slidePuzzle");
+        GameObject clue = GameObject.FindGameObjectWithTag("clue");
 
         if (Input.GetKeyDown(KeyCode.Escape) &&
             !keyPad.GetComponent<ShowKeyPad>().keyPadIsOn &&
-            !slidePuzzle.GetComponent<ShowSlidePuzzle>().slidePuzzleIsOn)
+            !slidePuzzle.GetComponent<ShowSlidePuzzle>().slidePuzzleIsOn &&
+            !clue.GetComponent<clue1paper>().clueIsOn)
         {
             if (isPaused)
             {

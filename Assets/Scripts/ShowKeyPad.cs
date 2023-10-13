@@ -28,8 +28,7 @@ public class ShowKeyPad : MonoBehaviour
             keyPadIsOn = true;
             txtItem.text = "Press E to exit!";
             keyPad.SetActive(true);
-            player.GetComponent<PlayerController>().enabled = true;
-            player.GetComponent<Collider2D>().enabled = true;
+            player.GetComponent<PlayerController>().enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOn && keyPadIsOn)
         {
@@ -37,7 +36,6 @@ public class ShowKeyPad : MonoBehaviour
             txtItem.text = "Press E to use!";
             keyPad.SetActive(false);
             player.GetComponent<PlayerController>().enabled = true;
-            player.GetComponent<Collider2D>().enabled = true;
         }
     }
 
@@ -64,5 +62,6 @@ public class ShowKeyPad : MonoBehaviour
         txtItem.text = "";
         keyPad.SetActive(false);
         Time.timeScale = 1f;
+        player.GetComponent<PlayerController>().enabled = true;
     }
 }
