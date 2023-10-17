@@ -11,6 +11,8 @@ public class ShowKeyPad : MonoBehaviour
     public bool keyPadIsOn;
     public GameObject player;
 
+    public ParticleSystem use;
+
     void Start()
     {
         keyPad.SetActive(false);
@@ -29,6 +31,11 @@ public class ShowKeyPad : MonoBehaviour
             txtItem.text = "Press E to exit!";
             keyPad.SetActive(true);
             player.GetComponent<PlayerController>().enabled = false;
+            player.GetComponent<PlayerController>().audio.Stop();
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingDown", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingUp", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingRight", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingLeft", false);
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOn && keyPadIsOn)
         {
@@ -63,5 +70,8 @@ public class ShowKeyPad : MonoBehaviour
         keyPad.SetActive(false);
         Time.timeScale = 1f;
         player.GetComponent<PlayerController>().enabled = true;
+        Destroy(use);
+        GameObject clue = GameObject.FindGameObjectWithTag("clue");
+        Destroy(clue.GetComponent<clue1paper>().use);
     }
 }

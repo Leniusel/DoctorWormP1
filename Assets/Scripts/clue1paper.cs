@@ -12,6 +12,8 @@ public class clue1paper : MonoBehaviour
     public bool isOn;
     public bool clueIsOn;
 
+    public ParticleSystem use;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,11 @@ public class clue1paper : MonoBehaviour
             txtUse.text = "Press E to exit!";
             clue.SetActive(true);
             player.GetComponent<PlayerController>().enabled = false;
+            player.GetComponent<PlayerController>().audio.Stop();
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingDown", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingUp", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingRight", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingLeft", false);
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOn && clueIsOn)
         {

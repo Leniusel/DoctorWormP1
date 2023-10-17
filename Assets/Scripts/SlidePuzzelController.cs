@@ -19,6 +19,8 @@ public class SlidePuzzelController : MonoBehaviour
     public GameObject puzzelObject;
     public GameObject player;
 
+    public ParticleSystem use;
+
 
     public bool isDone;
 
@@ -87,7 +89,8 @@ public class SlidePuzzelController : MonoBehaviour
             slidePuzzle.GetComponent<Collider2D>().enabled = false;
             GameObject Done = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<PlayerController>().enabled = true;
-            player.GetComponent<Collider2D>().enabled = true;
+
+            Destroy(use);
         }
 
         //On player interaction

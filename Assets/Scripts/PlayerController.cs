@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource audio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,34 +41,42 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             animator.SetBool("isWalkingDown", true);
+            audio.Play();
         }
         else if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             animator.SetBool("isWalkingDown", false);
+            audio.Stop();
         }
         else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             animator.SetBool("isWalkingUp", true);
+            audio.Play();
         }
         else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
             animator.SetBool("isWalkingUp", false);
+            audio.Stop();
         }
         else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             animator.SetBool("isWalkingRight", true);
+            audio.Play();
         }
         else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             animator.SetBool("isWalkingRight", false);
+            audio.Stop();
         }
         else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             animator.SetBool("isWalkingLeft", true);
+            audio.Play();
         }
         else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
             animator.SetBool("isWalkingLeft", false);
+            audio.Stop();
         }
 
 

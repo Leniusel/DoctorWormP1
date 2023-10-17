@@ -11,6 +11,8 @@ public class ShowSlidePuzzle : MonoBehaviour
     private bool isOnS;
     public bool slidePuzzleIsOn;
 
+    public ParticleSystem use;
+
     void Start()
     {
         slidePuzzle.SetActive(false);
@@ -29,6 +31,12 @@ public class ShowSlidePuzzle : MonoBehaviour
             player.GetComponent<PlayerController>().enabled = false;
             txtItem.text = "Press E to exit!";
             slidePuzzle.SetActive(true);
+            player.GetComponent<PlayerController>().audio.Stop();
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingDown", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingUp", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingRight", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingLeft", false);
+            player.transform.Rotate(0, 0, 0);
         }
         else if (Input.GetKeyDown(KeyCode.E) && slidePuzzleIsOn)
         {
@@ -62,5 +70,6 @@ public class ShowSlidePuzzle : MonoBehaviour
         txtItem.text = "";
         slidePuzzle.SetActive(false);
         Time.timeScale = 1f;
+        Destroy(use);
     }
 }
