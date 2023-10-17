@@ -10,6 +10,6 @@ public class rain : MonoBehaviour
     void Update()
     {
         var main = psRain.main;
-        main.simulationSpeed = 5;
+        main.simulationSpeed = 10;
     }
 }
