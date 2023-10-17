@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody2D r2b;
     public float speed = 5.0f;
     private GameObject player;
 
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Rigidbody2D r2d = this.GetComponent<Rigidbody2D>();
+        r2b = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             animator.SetBool("isWalkingDown", true);
             audio.Play();

@@ -37,6 +37,7 @@ public class ShowSlidePuzzle : MonoBehaviour
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingRight", false);
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingLeft", false);
             player.transform.Rotate(0, 0, 0);
+            Cursor.visible = true;
         }
         else if (Input.GetKeyDown(KeyCode.E) && slidePuzzleIsOn)
         {
@@ -44,6 +45,7 @@ public class ShowSlidePuzzle : MonoBehaviour
             player.GetComponent<PlayerController>().enabled = true;
             txtItem.text = "Press E to use!";
             slidePuzzle.SetActive(false);
+            Cursor.visible = false;
         }
     }
 
@@ -71,5 +73,6 @@ public class ShowSlidePuzzle : MonoBehaviour
         slidePuzzle.SetActive(false);
         Time.timeScale = 1f;
         Destroy(use);
+        Cursor.visible = false;
     }
 }

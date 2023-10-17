@@ -40,6 +40,7 @@ public class clue1paper : MonoBehaviour
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingUp", false);
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingRight", false);
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingLeft", false);
+            Cursor.visible = true;
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOn && clueIsOn)
         {
@@ -47,6 +48,7 @@ public class clue1paper : MonoBehaviour
             txtUse.text = "Press E to See!";
             clue.SetActive(false);
             player.GetComponent<PlayerController>().enabled = true;
+            Cursor.visible = false;
         }
     }
 

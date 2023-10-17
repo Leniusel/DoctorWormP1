@@ -36,6 +36,7 @@ public class ShowKeyPad : MonoBehaviour
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingUp", false);
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingRight", false);
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingLeft", false);
+            Cursor.visible = true;
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOn && keyPadIsOn)
         {
@@ -43,6 +44,7 @@ public class ShowKeyPad : MonoBehaviour
             txtItem.text = "Press E to use!";
             keyPad.SetActive(false);
             player.GetComponent<PlayerController>().enabled = true;
+            Cursor.visible = false;
         }
     }
 
@@ -73,5 +75,6 @@ public class ShowKeyPad : MonoBehaviour
         Destroy(use);
         GameObject clue = GameObject.FindGameObjectWithTag("clue");
         Destroy(clue.GetComponent<clue1paper>().use);
+        Cursor.visible = false;
     }
 }
