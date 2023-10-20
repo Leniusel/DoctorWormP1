@@ -15,7 +15,6 @@ public class MathPuzzleLogic : MonoBehaviour
     public TextMeshProUGUI resultAdd;
     public TextMeshProUGUI resultMult;
 
-    public GameObject mathPuzzleInG;
     public GameObject mathPuzzle;
     public GameObject Add;
     public GameObject Mult;
@@ -66,7 +65,6 @@ public class MathPuzzleLogic : MonoBehaviour
         if ((choice1 == second) && (choice2 == (fourth + 10)))
         {
             key.SetActive(true);
-            mathPuzzleInG.GetComponent<Collider2D>().enabled = false;
             mathPuzzle.SetActive(false);
             Cursor.visible = false;
             GameObject Done = GameObject.FindGameObjectWithTag("math");

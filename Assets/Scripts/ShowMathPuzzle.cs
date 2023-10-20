@@ -75,6 +75,7 @@ public class ShowMathPuzzle : MonoBehaviour
         Time.timeScale = 1f;
         player.GetComponent<PlayerController>().enabled = true;
         Destroy(use);
+        mathPuzzle.GetComponent<Collider2D>().enabled = false;
         Cursor.visible = false;
     }
 }

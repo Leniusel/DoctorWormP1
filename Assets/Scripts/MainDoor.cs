@@ -36,6 +36,7 @@ public class MainDoor : MonoBehaviour
                 print("Win!");
                 winning.SetActive(true);
                 Time.timeScale = 0f;
+                Cursor.visible = true;
             }
         }
     }
