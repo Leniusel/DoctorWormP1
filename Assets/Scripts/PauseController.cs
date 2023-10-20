@@ -46,6 +46,7 @@ public class PauseController : MonoBehaviour
         pauseMenu.SetActive(true);
         isPaused = true;
         Time.timeScale = 0f;
+        Cursor.visible = true;
     }
 
     //Resume Game
@@ -54,6 +55,7 @@ public class PauseController : MonoBehaviour
         pauseMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1f;
+        Cursor.visible = false;
     }
 
     //Quit Game and return to Main Menu
@@ -67,6 +69,7 @@ public class PauseController : MonoBehaviour
     {
         isPaused = false;
         SceneManager.LoadScene("Lvl1");
+        Cursor.visible = false;
         //Code to restart timer (not finished/ please wait for Timer script)
     }
 
