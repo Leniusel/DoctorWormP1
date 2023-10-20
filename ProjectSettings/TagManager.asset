@@ -8,6 +8,7 @@ TagManager:
   - slidePuzzle
   - keyPad
   - clue
+  - math
   layers:
   - Default
   - TransparentFX
