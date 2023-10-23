@@ -6,9 +6,11 @@ using TMPro;
 public class ShowMathPuzzle : MonoBehaviour
 {
     public GameObject mathPuzzle;
+    public GameObject mathPuzzleCol;
     public TMP_Text txtItem;
     private bool isOn;
     public bool mathIsOn;
+    public bool Done;
     public GameObject player;
 
     public ParticleSystem use;
@@ -16,6 +18,7 @@ public class ShowMathPuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Done = false;
         mathPuzzle.SetActive(false);
         isOn = false;
         mathIsOn = false;
@@ -52,9 +55,7 @@ public class ShowMathPuzzle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        GameObject keyPad = GameObject.FindGameObjectWithTag("Player");
-        if (!keyPad.GetComponent<keypad>().isDone)
+        if (!Done)
         {
             isOn = true;
             txtItem.text = "Press E to use!";
@@ -69,13 +70,14 @@ public class ShowMathPuzzle : MonoBehaviour
 
     public void isDone()
     {
+        Done = true;
         mathIsOn = false;
         txtItem.text = "";
         mathPuzzle.SetActive(false);
         Time.timeScale = 1f;
         player.GetComponent<PlayerController>().enabled = true;
         Destroy(use);
-        mathPuzzle.GetComponent<Collider2D>().enabled = false;
+        mathPuzzleCol.GetComponent<Collider2D>().enabled = false;
         Cursor.visible = false;
     }
 }
