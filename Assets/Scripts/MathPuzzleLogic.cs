@@ -42,10 +42,10 @@ public class MathPuzzleLogic : MonoBehaviour
         resultMult.text = mult.ToString();
     }
 
-    IEnumerator PuzzleOff()
-    {
-        yield return new WaitForSeconds(10);
-    }
+    //IEnumerator PuzzleOff()
+    //{
+    //    yield return new WaitForSeconds(10);
+    //}
 
     // Update is called once per frame
     void Update()

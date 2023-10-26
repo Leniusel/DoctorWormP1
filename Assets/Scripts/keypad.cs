@@ -123,6 +123,7 @@ public class keypad : MonoBehaviour
             keyPad.GetComponent<Collider2D>().enabled = false;
             GameObject Done = GameObject.FindGameObjectWithTag("keyPad");
             Done.GetComponent<ShowKeyPad>().isDone();
+
         }
         else
         {
